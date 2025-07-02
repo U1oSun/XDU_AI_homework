@@ -1,7 +1,7 @@
-from PSO import PSO
+import PSO
 import matplotlib.pyplot as plt
 import numpy as np
-from PSO import fit_fun
+#from PSO import fit_fun
 
 dim = 2
 size = 10
@@ -43,8 +43,9 @@ if __name__ == "__main__":
 
     for idx, func in enumerate(functions, start=1):
         print(f"\nExecuting Function {idx}: {func.__name__}")
-        fit_fun = func
-        pso = PSO(dim, size, iter_num, x_max, max_vel)
+        #fit_fun = func
+        PSO.fit_fun = func
+        pso = PSO.PSO(dim, size, iter_num, x_max, max_vel)
         fit_var_list1, best_pos1 ,avg_fitness_values_list,worst_fitness_values_list= pso.update()
         print("PSO最优位置:" + str(best_pos1))
         print("PSO最优解:" + str(fit_var_list1[-1]))
