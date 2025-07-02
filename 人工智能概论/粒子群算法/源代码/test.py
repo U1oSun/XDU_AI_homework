@@ -19,7 +19,7 @@ def schwefel_2_21_function(X):
 
 # Brown's Almost-Linear Function
 def brown_almost_linear_function(X):
-    return -X[0] * np.sin(np.sqrt(np.abs(X[0]))) - X[1] * np.sin(np.sqrt(np.abs(X[1])))
+    return 2*X[0]**2 + 2*X[0]*X[1] + X[1]**2
 
 # Rastrigin Function
 def rastrigin_function(X):
